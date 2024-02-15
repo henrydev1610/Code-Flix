@@ -1,6 +1,7 @@
 import {Box ,ThemeProvider} from '@mui/system'
 import Header from './Components/Header'
 import { createTheme } from '@mui/material'
+import Layout from './Components/Layout'
 
 
 
@@ -26,6 +27,9 @@ const App = ()=>{
       
       >
         <Header/>
+        <Layout>
+          <h1> Olá mundo!</h1>
+        </Layout>
 
       </Box>
 
