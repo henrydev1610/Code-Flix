@@ -1,13 +1,29 @@
-import Button from '@mui/material/Button';
+import {Box ,ThemeProvider} from '@mui/system'
+import Header from './Components/Header'
+
+const App = ()=>{
+  return(
+    <ThemeProvider theme={{}}>
+        
+      <Box
+        component='main'
+        sx={{
+          height: "100vh",
+          backgroundColor: "#000",
 
 
 
-const App = () => {
-  return (
-    <div>
-      <Button variant="contained">Saiba mais </Button>
-    </div>
+        }}
+      
+      
+      >
+        <Header/>
+
+      </Box>
+
+    </ThemeProvider>
   )
 }
+
 
 export default App
