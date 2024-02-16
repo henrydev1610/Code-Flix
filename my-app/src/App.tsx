@@ -1,12 +1,15 @@
-import { Box, ThemeProvider } from "@mui/system"
+import { Box, ThemeProvider, typographyVariant } from "@mui/system"
 import Header from "./Components/Header"
-import { Route, Routes, Link } from "react-router-dom"
+import { Route, Routes, } from "react-router-dom"
 import Layout from "./Components/Layout"
 import { appTheme } from "./Config/theme"
 import { Typography } from "@mui/material"
+import { ListCategory } from "./features/Categories/ListCategory"
+import { CreateCategory } from "./features/Categories/CreateCategory"
+import { EditCategory } from "./features/Categories/EditCategory"
 //import Sobre from "./Components/Sobre"
 
-
+/* 
 const Home = () =>(
   <Box>
     <Typography variant="h3" component='h1'>
@@ -21,7 +24,7 @@ const Sobre = ()=>(
           sobre
     </Typography>
   </Box>
-)
+) */
 
 
 const App = () => {
@@ -36,11 +39,20 @@ const App = () => {
       >
         <Header />
         <Layout>
-          <h1>Bem vindo Usuário!</h1>
+          
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Sobre />} />
+            <Route path="/" element={<ListCategory/>} />
+            <Route path="/categories" element={<ListCategory/>} />
+            <Route path="/categories/create" element={<CreateCategory/>} />
+            <Route path="/categories/edit/:id" element={<EditCategory/>} />
+            <Route path="*" element={
+             <Box sx={{color: "white"}} >
+              <Typography variant="h1" sx={{color: "red"}} component='h1'>ERRO: 404</Typography>
+              <Typography variant="h2" component='h1'>Página Não encontrada!</Typography>
+            </Box>
+            } />
           </Routes>
+
         </Layout>
       </Box>
     </ThemeProvider>
